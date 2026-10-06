@@ -1,0 +1,113 @@
+﻿<!DOCT<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Phiếu Tham Gia CLB Tin Học LUBU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .form-box {
+            width: 680px;
+            margin: 0 auto;
+            border: 1px solid #aaa;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #00a8e8;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 6px 8px;
+            vertical-align: middle;
+        }
+        .lbl-title {
+            width: 130px;
+        }
+        .input-cell {
+            width: 220px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+        .error-msg {
+            color: red;
+            font-size: 13px;
+        }
+        .btn-cell {
+            text-align: center;
+            padding-top: 15px;
+        }
+        button {
+            padding: 6px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Nhúng file bai1.js riêng theo đúng yêu cầu đề bài -->
+    <script src="bai1.js"></script>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>PHIẾU THAM GIA CLB TIN HỌC LUBU</h2>
+    <table>
+        <tr>
+            <td class="lbl-title">Mã sinh viên:</td>
+            <td class="input-cell"><input type="text" id="msv" placeholder="Nhập Mã SV"></td>
+            <td class="error-msg" id="err_msv"></td>
+        </tr>
+        <tr>
+            <td>Họ và tên:</td>
+            <td><input type="text" id="hoten" placeholder="Nhập Họ và tên"></td>
+            <td class="error-msg" id="err_hoten"></td>
+        </tr>
+        <tr>
+            <td>Tuổi:</td>
+            <td><input type="text" id="tuoi" placeholder="Nhập tuổi >= 18"></td>
+            <td class="error-msg" id="err_tuoi"></td>
+        </tr>
+        <tr>
+            <td>Ngoại ngữ:</td>
+            <td>
+                <label><input type="checkbox" name="ngoaingu" value="Anh"> Anh</label>
+                <label><input type="checkbox" name="ngoaingu" value="Pháp"> Pháp</label>
+                <label><input type="checkbox" name="ngoaingu" value="Nhật"> Nhật</label>
+            </td>
+            <td class="error-msg" id="lbl_ngoaingu"></td>
+        </tr>
+        <tr>
+            <td>Chuyên ngành:</td>
+            <td>
+                <select id="chuyennganh" onchange="chonChuyenNganh()">
+                    <option value="">-- Chọn chuyên ngành --</option>
+                    <option value="Hệ thống">Hệ thống</option>
+                    <option value="Phần mềm">Phần mềm</option>
+                    <option value="Mạng máy tính">Mạng máy tính</option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sở trường:</td>
+            <td><input type="text" id="sotruong" readonly></td>
+            <td class="error-msg" id="lbl_ketqua"></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="btn-cell">
+                <button type="button" onclick="dangKy()">Đăng ký</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

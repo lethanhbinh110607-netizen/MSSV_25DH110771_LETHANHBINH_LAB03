@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ví dụ 4 - Thành tiền</title>
+    <script language="JavaScript">
+                function Tinhtien() {
+                    // Lấy giá trị từ các ô nhập liệu
+                    var sl = parseFloat(document.getElementById("sl").value);
+                    var dg = parseFloat(document.getElementById("dg").value);
+
+                    // Tính toán và gán kết quả vào ô Thành tiền
+                    // Kiểm tra xem sl và dg có phải là số hợp lệ không trước khi tính
+                    if (!isNaN(sl) && !isNaN(dg)) {
+                        window.document.getElementById("tt").value = sl * dg;
+                    } else {
+                         window.document.getElementById("tt").value = "";
+                    }
+                }
+    </script>
+</head>
+<body>
+    <h3>NHẬP SỐ LƯỢNG VÀ ĐƠN GIÁ</h3>
+    <form method="post">
+        Đơn giá : <input type="text" id="dg" name="dongia" onkeyup="Tinhtien();" /> <br />
+        Số lượng : <input type="text" id="sl" name="soluong" onkeyup="Tinhtien();" /> <br />
+        Thành tiền : <input type="text" id="tt" name="tien" readonly /> <br />
+    </form>
+</body>
+</html>

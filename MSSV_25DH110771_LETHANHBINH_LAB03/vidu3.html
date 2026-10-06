@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ví dụ 3 - Ngày giờ hệ thống</title>
+    <script language="JavaScript">
+        function Homnay() {
+            var d = new Date();
+            // Tháng trong JavaScript bắt đầu từ 0 (Tháng 1 là 0) nên cần +1
+            alert("Hôm nay là ngày " + d.getDate() + " tháng " + (d.getMonth() + 1) + " năm " + d.getFullYear());
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <input type="button" value="Hôm nay" onclick="Homnay();" />
+    </form>
+</body>
+</html>

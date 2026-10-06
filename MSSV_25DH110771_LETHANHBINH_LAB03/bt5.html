@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Bài tập 5 - Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Khung chứa thanh progress */
+        .progress-box {
+            width: 100%;
+            height: 32px;
+            background-color: #e5e5e5;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Phần phần trăm đã hoàn thành */
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: width 0.1s linear;
+        }
+
+        /* Màu sắc tương ứng như đề bài */
+        .purple {
+            background-color: #800080;
+        }
+
+        .teal {
+            background-color: #008080;
+        }
+
+        .orange {
+            background-color: #f07800;
+        }
+
+        /* Nút điều khiển */
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+    <h2>Tiến trình đang chạy</h2>
+
+    <div class="container">
+        <!-- Thanh 1: Tím (Target: 60%) -->
+        <div class="progress-box">
+            <div id="bar1" class="progress-fill purple">0%</div>
+        </div>
+
+        <!-- Thanh 2: Xanh ngọc (Target: 30%) -->
+        <div class="progress-box">
+            <div id="bar2" class="progress-fill teal">0%</div>
+        </div>
+
+        <!-- Thanh 3: Cam (Target: 53%) -->
+        <div class="progress-box">
+            <div id="bar3" class="progress-fill orange">0%</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="startProgress()">Chạy tiến trình</button>
+        <button onclick="resetProgress()">Làm mới</button>
+    </div>
+
+    <script src="bt5.js"></script>
+</body>
+</html>

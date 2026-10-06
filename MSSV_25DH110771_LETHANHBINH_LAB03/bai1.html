@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <title>Phiếu Tham Gia CLB Tin Học LUBU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .container {
+            width: 650px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #00bfff;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px;
+            vertical-align: middle;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        .btn-box {
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+
+    <!-- Nhúng file bai1.js vào file HTML -->
+    <script src="bai1.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>PHIẾU THAM GIA CLB TIN HỌC LUBU</h2>
+        <table>
+            <tr>
+                <td style="width: 130px;">Mã sinh viên:</td>
+                <td style="width: 220px;"><input type="text" id="msv" placeholder="Nhập Mã SV" /></td>
+                <td class="error" id="err_msv"></td>
+            </tr>
+            <tr>
+                <td>Họ và tên:</td>
+                <td><input type="text" id="hoten" placeholder="Nhập Họ và tên" /></td>
+                <td class="error" id="err_hoten"></td>
+            </tr>
+            <tr>
+                <td>Tuổi:</td>
+                <td><input type="text" id="tuoi" placeholder="Nhập tuổi" /></td>
+                <td class="error" id="err_tuoi"></td>
+            </tr>
+            <tr>
+                <td>Ngoại ngữ:</td>
+                <td>
+                    <label><input type="checkbox" name="ngoaingu" value="Anh" /> Anh</label>
+                    <label><input type="checkbox" name="ngoaingu" value="Pháp" /> Pháp</label>
+                    <label><input type="checkbox" name="ngoaingu" value="Nhật" /> Nhật</label>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Chuyên ngành:</td>
+                <td>
+                    <select id="chuyennganh" onchange="chonChuyenNganh()">
+                        <option value="">-- Chọn chuyên ngành --</option>
+                        <option value="hethong">Hệ thống</option>
+                        <option value="phanmem">Phần mềm</option>
+                        <option value="mang">Mạng máy tính</option>
+                    </select>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sở trường:</td>
+                <td><input type="text" id="sotruong" readonly="readonly" /></td>
+                <td id="lbl_ketqua" style="font-weight: bold;"></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="btn-box">
+                    <button type="button" onclick="dangKy()">Đăng ký</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

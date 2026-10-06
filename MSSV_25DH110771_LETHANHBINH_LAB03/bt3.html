@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bài tập 3 - Đồng hồ kỹ thuật số</title>
+    <style>
+        /* Căn giữa màn hình */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Khung màu đen chứa đồng hồ */
+        .clock-box {
+            background-color: #000000;
+            padding: 25px 45px;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Chữ đồng hồ kỹ thuật số */
+        #digital-clock {
+            color: #00e5ff;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 52px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Khung hiển thị đồng hồ -->
+    <div class="clock-box">
+        <div id="digital-clock">00:00:00 AM</div>
+    </div>
+
+    <!-- Nhúng file JavaScript -->
+    <script src="bt3.js"></script>
+</body>
+</html>

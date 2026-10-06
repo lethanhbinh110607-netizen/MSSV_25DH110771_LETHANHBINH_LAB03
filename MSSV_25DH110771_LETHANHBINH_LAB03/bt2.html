@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin giao hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 30px;
+        }
+
+        .form-container {
+            width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px 25px;
+            border-radius: 4px;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+            .form-group label {
+                display: block;
+                font-size: 13px;
+                color: #333;
+                margin-bottom: 4px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 6px 8px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                box-sizing: border-box;
+            }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 2px;
+            min-height: 16px;
+        }
+
+        .btn-group {
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        .btn-option {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            font-size: 13px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .btn-vanphong {
+            background-color: #007bff;
+        }
+
+        .btn-nharieng {
+            background-color: #28a745;
+        }
+
+        .btn-luu {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+    </style>
+
+    <!-- Nhúng file bt2.js -->
+    <script src="bt2.js"></script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h3>Thông tin giao hàng</h3>
+
+        <div class="form-group">
+            <label>Tên</label>
+            <input type="text" id="ten" onblur="kiemTraRong('ten', 'err_ten', 'Tên')">
+            <div class="error-message" id="err_ten"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Địa chỉ nhận hàng</label>
+            <input type="text" id="diachi" onblur="kiemTraRong('diachi', 'err_diachi', 'Địa chỉ nhận hàng')">
+            <div class="error-message" id="err_diachi"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" id="sdt" onblur="kiemTraSDT('sdt', 'err_sdt')">
+            <div class="error-message" id="err_sdt"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Tỉnh / thành phố</label>
+            <input type="text" id="tinh" onblur="kiemTraRong('tinh', 'err_tinh', 'Tỉnh / thành phố')">
+            <div class="error-message" id="err_tinh"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Quận / Huyện</label>
+            <input type="text" id="quan" onblur="kiemTraRong('quan', 'err_quan', 'Quận / Huyện')">
+            <div class="error-message" id="err_quan"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Phường / Xã</label>
+            <input type="text" id="phuong" onblur="kiemTraRong('phuong', 'err_phuong', 'Phường / Xã')">
+            <div class="error-message" id="err_phuong"></div>
+        </div>
+
+        <div class="form-group">
+            <label>Lựa chọn tên cho địa chỉ thường dùng</label>
+            <div class="btn-group">
+                <button type="button" class="btn-option btn-vanphong" onclick="chonDiaChi('Văn phòng')">Văn phòng</button>
+                <button type="button" class="btn-option btn-nharieng" onclick="chonDiaChi('Nhà riêng')">Nhà riêng</button>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn-luu" onclick="luuThongTin()">Lưu</button>
+        </div>
+    </div>
+
+</body>
+</html>
